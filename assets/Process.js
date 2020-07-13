@@ -14,18 +14,6 @@ export default class Process {
 
     get stackTrace(){
         return Array.isArray(this.current[0].from) ? [...this.current[0].from, this.current[0].name] : [this.current[0].from, this.current[0].name];
-
-        let c = this.current[0];
-        let stacktrace = [c.name];
-        let deep = this.deep - 2; 
-        while(c.from !== this.name && this.deep >= 0){
-            let arr = this.tree[deep].filter(value => value.name === c.from);
-            stacktrace.push(c.name);
-            c = arr[0];
-            deep = deep - 1;
-        }
-        stacktrace.push(c.name);
-        return [...stacktrace, this.name];
     }
 
     match(process){
