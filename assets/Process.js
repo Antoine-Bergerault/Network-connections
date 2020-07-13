@@ -67,7 +67,7 @@ export default class Process {
 
 
         /**
-         * Creating
+         * Creating fake data
          */
 
         const pairs = [
